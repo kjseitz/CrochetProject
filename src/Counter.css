@@ -1,0 +1,20 @@
+img {
+    height: 25px;
+}
+
+button {
+    background-color: #FFA4C6;
+    margin: 5px;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+.counter-header {
+    display: flex;
+    align-items: center;
+  }
+ .counter-header h1 {
+    margin: 10px;
+ }
