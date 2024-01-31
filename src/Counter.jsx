@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Container from "./Container"
+import './Counter.css'
 
 function Counter({ name }) {
   const [count, setCount] = useState(0);
   const [pieceName, setPieceName] = useState('Piece Name');
-  const [showDecreaseButton, setShowDecreaseButton] = useState(false);
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -15,6 +15,8 @@ function Counter({ name }) {
     const userInput = prompt('Please enter the piece name:', pieceName);
     if (userInput !== null) {
       setPieceName(userInput);
+    } else {
+      setPieceName("Piece Name");
     }
   };
 
@@ -25,24 +27,23 @@ function Counter({ name }) {
 
   const decreaseCount = () => {
     setCount(count - 1);
-    if (count === 1) {
-      setShowDecreaseButton(false);
-    }
   };
 
   return (
     <div>
-      <h1>{pieceName}</h1>
-      <h3>
+      <div className="counter-header">
+        <h1>{pieceName}</h1>
+        <button onClick={updatePieceName}><img src="edit.webp"/></button>
+      </div>
+      <h2>
         {name}: {count}
-      </h3>
-      <button onClick={incrementCount}>Increment</button>
-      <br />
-      {showDecreaseButton && (
-        <button onClick={decreaseCount}>Decrease</button>
-      )}
-      <br />
-      <button onClick={updatePieceName}>Update Piece Name</button>
+      </h2>
+      <button onClick={incrementCount}><img src="plus.png"/></button>
+      {count != 0 ?
+        <button onClick={decreaseCount}><img src="minus.png"/></button>
+        : <button><img src="minus.png"/></button>
+      }
+      
     </div>
   );
 }

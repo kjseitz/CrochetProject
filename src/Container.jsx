@@ -1,15 +1,17 @@
+import { useState } from 'react'
 import Input from "./Input"
 
-//get the value from the input with holder="# of rounds"
-const getNumOfRounds = () => {
-    const numOfRoundsHolder = document.querySelector("#num-of-rounds-holder");
-    return parseInt(numOfRoundsHolder.value);
-}
-
 function Container() {
+    const [getNumRounds,  setNumRounds] = useState(1); 
+    //get the input for the input with id="roundsNum"
+    function handleSubmit(e) {
+        e.preventDefault();
+        let roundsNum = document.getElementById("roundsNum").value;
+    }
+
 return (
     <div className="container">
-        <Input holder="# of rounds" id="roundsNum" type="number" onChange={getNumOfRounds}/><br />
+        <Input holder="# of rounds" id="roundsNum" type="number"/><br />
         <Input holder="# of stitches" id="numOfStitches" type="number"/><br />
         <Input holder="Hook Size" id="hookSize" type="number"/><br />
         <Input holder="Yarn Color(s)" type="text"/>
