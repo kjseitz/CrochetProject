@@ -15,8 +15,6 @@ function Counter({ name }) {
     const userInput = prompt('Please enter the piece name:', pieceName);
     if (userInput !== null) {
       setPieceName(userInput);
-    } else {
-      setPieceName("Piece Name");
     }
   };
 
