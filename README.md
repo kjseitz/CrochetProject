@@ -9,8 +9,6 @@ Currently, two official plugins are available:
 # CrochetProject
 
 ## Commands
-### Create:
-    npm create vite@latest my-vue-app -- --template react
 ### Install:
   npm install  
   npx prisma generate
