@@ -9,4 +9,11 @@ Currently, two official plugins are available:
 # CrochetProject
 
 ## Commands
-To Run: npm run dev
+### Create:
+    npm create vite@latest my-vue-app -- --template react
+### Install:
+  npm install  
+  npx prisma generate
+  npm install bootstrap
+### To Run: 
+  npm run dev
