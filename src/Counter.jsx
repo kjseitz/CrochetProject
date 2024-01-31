@@ -4,9 +4,11 @@ import Container from "./Container"
 function Counter({ name }) {
   const [count, setCount] = useState(0);
   const [pieceName, setPieceName] = useState('Piece Name');
+  const [showDecreaseButton, setShowDecreaseButton] = useState(false);
 
   const incrementCount = () => {
     setCount(count + 1);
+    setShowDecreaseButton(true);
   };
 
   const updatePieceName = () => {
@@ -23,6 +25,9 @@ function Counter({ name }) {
 
   const decreaseCount = () => {
     setCount(count - 1);
+    if (count === 1) {
+      setShowDecreaseButton(false);
+    }
   };
 
   return (
@@ -31,11 +36,12 @@ function Counter({ name }) {
       <h3>
         {name}: {count}
       </h3>
-        {count <  10 ? (
-          <button onClick={incrementCount}>Increment</button>
-            ) : (
-          <button onClick={decreaseCount}>Decrease</button>
-        )}
+      <button onClick={incrementCount}>Increment</button>
+      <br />
+      {showDecreaseButton && (
+        <button onClick={decreaseCount}>Decrease</button>
+      )}
+      <br />
       <button onClick={updatePieceName}>Update Piece Name</button>
     </div>
   );
