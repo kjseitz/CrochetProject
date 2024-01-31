@@ -1,4 +1,9 @@
 input {
     background-color: #FFA4C6;
-    outline: black;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
 }

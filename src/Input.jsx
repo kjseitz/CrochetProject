@@ -9,7 +9,7 @@ const handleChange = (event) =>{
 };
 
 return (
-    <input type={type} id={id} placeholder = {holder}>{userInput}</input>
+    <input class="input" type={type} id={id} placeholder = {holder}>{userInput}</input>
 )
 }
 
