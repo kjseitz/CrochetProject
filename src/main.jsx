@@ -8,8 +8,7 @@ import Container from './Container.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Counter name="Round"/>
+    <br />
     <Container />
-    
-    {/*<App />*/}
   </React.StrictMode>,
 )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Container from "./Container"
 
 function Counter({ name }) {
   const [count, setCount] = useState(0);
@@ -15,14 +16,26 @@ function Counter({ name }) {
     }
   };
 
+  const getNumOfRounds = () => {
+    const numOfRoundsHolder = document.querySelector("#num-of-rounds-holder");
+    const maxRounds = parseInt(numOfRoundsHolder.value);
+  }
+
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div>
       <h1>{pieceName}</h1>
       <h3>
         {name}: {count}
       </h3>
-      <button onClick={incrementCount}>Increment</button>
-      <br />
+        {count <  10 ? (
+          <button onClick={incrementCount}>Increment</button>
+            ) : (
+          <button onClick={decreaseCount}>Decrease</button>
+        )}
       <button onClick={updatePieceName}>Update Piece Name</button>
     </div>
   );
